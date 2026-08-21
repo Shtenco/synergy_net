@@ -1,0 +1,24 @@
+{
+  "schema": "synergynet.source-capsule-recipe/v1",
+  "recipe_id": "SYNERGYNET_RESEARCH_TRANSPORT_SOURCE_CAPSULE_V1",
+  "artifact_kind": "NON_EXECUTABLE_DETERMINISTIC_SOURCE_CAPSULE",
+  "archive_format": "ZIP_STORED_FIXED_TIMESTAMP",
+  "fixed_timestamp": "1980-01-01T00:00:00Z",
+  "source_paths": [
+    "config/synergynet_source_capsule_recipe_v1.json",
+    "pyproject.toml",
+    "src/synergynet/__init__.py",
+    "src/synergynet/lab.py",
+    "src/synergynet/persistent_lab_v3.py",
+    "src/synergynet/storage_v3.py",
+    "src/synergynet/tcp_baseline.py",
+    "src/synergynet/tcp_transport.py",
+    "tools/build_source_capsule_v1.py"
+  ],
+  "dependency_manifest": null,
+  "dependency_lock_status": "STDLIB_ONLY_DEPENDENCIES_INTERPRETER_NOT_PINNED",
+  "output_name": "synergynet_research_transport_source_v1.zip",
+  "build_evidence_status": "NOT_EXECUTED",
+  "execution_authority": "NONE",
+  "recipe_digest": "5202b60cd607a8c88f97aa4cd5b9ba9ed6c304715f445f32cc610fcd61ee2bd3"
+}
