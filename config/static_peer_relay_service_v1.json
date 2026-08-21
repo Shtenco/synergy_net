@@ -1,0 +1,17 @@
+{
+  "schema": "synergynet.service-descriptor/v1",
+  "service_id": "synergynet-relay-v1",
+  "service_kind": "SYNERGYNET",
+  "python_module": "synergynet.static_relay_v1",
+  "entrypoint": "python -m synergynet.static_relay_v1",
+  "protocol": "synergynet.relay-request/v1+synergynet.relay-response/v1",
+  "allowed_operations": ["RELAY_CHUNK"],
+  "required_capabilities": ["P2P_RELAY"],
+  "peer_directory_mode": "STATIC_LOCAL_ALLOWLIST",
+  "network_scope": "STATIC_ALLOWLISTED_PEERS_ONLY",
+  "build_artifact_digest": null,
+  "build_status": "SERVICE_SOURCE_CANDIDATE_NOT_BUILD_VERIFIED",
+  "payment_authority": "NONE",
+  "accounting_authority": "NONE",
+  "execution_authority": "NONE"
+}
