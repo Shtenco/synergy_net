@@ -1,0 +1,9 @@
+{
+  "schema": "synergynet.implementation-status/v2",
+  "implementation": "PRESENT",
+  "tests": "PRESENT",
+  "benchmark_scope": "LOOPBACK_APPLICATION_LAYER_ONLY",
+  "quic": "NOT_PERFORMED",
+  "pq_transport": "NOT_IMPLEMENTED_IN_V2",
+  "production_verified": false
+}
