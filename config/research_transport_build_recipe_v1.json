@@ -1,0 +1,33 @@
+{
+  "schema": "synergynet.service-build-recipe/v1",
+  "recipe_id": "SYNERGYNET_RESEARCH_TRANSPORT_BUILD_RECIPE_V1",
+  "source_repository": "Shtenco/synergynet",
+  "source_commit": "874a83b6510420ec43ce99fc4b7936e106ad2339",
+  "service_descriptor_paths": [
+    "config/persistent_content_service_v2.json",
+    "config/static_peer_relay_service_v1.json"
+  ],
+  "include_files": [
+    {"path": "config/persistent_content_service_v2.json", "git_blob_sha": "430749ebfb53408de844959483dd8600fa49104f"},
+    {"path": "config/static_peer_relay_service_v1.json", "git_blob_sha": "37ddf65f171b52256e1168925539b9b76eab79e5"},
+    {"path": "pyproject.toml", "git_blob_sha": "c475e288ad4fd35334f5d42d1dffcfd8cbc19926"},
+    {"path": "src/synergynet/__init__.py", "git_blob_sha": "cae45c092c78bc4b3ee32edd745dbab1090b33d0"},
+    {"path": "src/synergynet/persistent_service_v1.py", "git_blob_sha": "484b67874dc4620d6dbc6ae11194162e4f6fc308"},
+    {"path": "src/synergynet/static_relay_v1.py", "git_blob_sha": "382c20d85557f436279bd38674c9110a8b2d857e"},
+    {"path": "src/synergynet/storage_v3.py", "git_blob_sha": "067a5cbd963a491bc430f0805a510905a9143138"}
+  ],
+  "archive_profile": {
+    "format": "ZIP_STORED",
+    "entry_order": "LEXICOGRAPHIC_PATH",
+    "fixed_timestamp": "1980-01-01T00:00:00Z",
+    "file_mode": "0644",
+    "strip_extra_fields": true
+  },
+  "dependency_contract": "PYTHON_STDLIB_ONLY",
+  "dependency_lock_status": "STDLIB_ONLY_NO_THIRD_PARTY_RUNTIME_DEPENDENCIES",
+  "artifact_semantics": "EXECUTABLE_SOURCE_PACKAGE_CANDIDATE",
+  "service_roles": ["CONTENT_CACHE", "SYNERGYNET"],
+  "build_authority": "SOURCE_REPOSITORY_ONLY",
+  "execution_authority": "NONE",
+  "recipe_digest": "16d3456cddfd9b6e6f876967aac67b8d54b58b6ff6d997a33163feb12daa8792"
+}
