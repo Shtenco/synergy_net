@@ -1,0 +1,15 @@
+{
+  "schema": "synergynet.service-descriptor/v2",
+  "service_id": "synergynet-content-cache-v1",
+  "service_kind": "CONTENT_CACHE",
+  "python_module": "synergynet.persistent_service_v1",
+  "entrypoint": "python -m synergynet.persistent_service_v1",
+  "protocol": "synergynet.content-wire/v1",
+  "allowed_operations": ["GET_RAW", "HAS", "PUT", "STATUS"],
+  "required_capabilities": ["CONTENT_CACHE"],
+  "store_identity": "SHA256_RAW_BYTES",
+  "codec_identity_authority": "NONE",
+  "build_artifact_digest": null,
+  "build_status": "SERVICE_SOURCE_CANDIDATE_NOT_BUILD_VERIFIED",
+  "execution_authority": "NONE"
+}
