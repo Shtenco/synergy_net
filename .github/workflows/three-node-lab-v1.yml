@@ -1,0 +1,40 @@
+name: SynergyNet Three Node Lab v1
+
+on:
+  pull_request:
+    paths:
+      - "src/synergynet/**"
+      - "tests/**"
+      - "benchmarks/**"
+      - "docs/THREE_NODE_LAB_V1.md"
+      - ".github/workflows/three-node-lab-v1.yml"
+  push:
+    paths:
+      - "src/synergynet/**"
+      - "tests/**"
+      - "benchmarks/**"
+      - "docs/THREE_NODE_LAB_V1.md"
+      - ".github/workflows/three-node-lab-v1.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  lab:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip pytest
+      - run: python -m pip install -e .
+      - run: python -m pytest -q
+      - run: python benchmarks/run_three_node_lab.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: three-node-lab-${{ matrix.python-version }}
+          path: benchmark_output/three_node_lab_v1.json
