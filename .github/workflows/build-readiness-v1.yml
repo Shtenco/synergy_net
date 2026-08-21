@@ -1,0 +1,30 @@
+name: SynergyNet Build Readiness v1
+
+on:
+  pull_request:
+    paths:
+      - 'config/research_transport_build_readiness_v1.json'
+      - 'src/synergynet/build_readiness_v1.py'
+      - 'tests/test_build_readiness_v1.py'
+      - 'docs/RESEARCH_TRANSPORT_BUILD_READINESS_V1.md'
+      - '.github/workflows/build-readiness-v1.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: synergynet-build-readiness-v1-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -e . pytest
+      - run: python -m pytest -q tests/test_build_readiness_v1.py

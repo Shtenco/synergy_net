@@ -1,0 +1,21 @@
+{
+  "schema": "synergynet.build-readiness/v1",
+  "component_id": "SYNERGYNET_RESEARCH_TRANSPORT_CACHE_V1",
+  "source_repository": "Shtenco/synergynet",
+  "source_commit": "a8fde01c19420dbe63ca30e1da3b009c0c10064d",
+  "source_ref": "feat/persistent-store-codec-v3-20260821",
+  "source_artifacts": [
+    {"path":"src/synergynet/lab.py","git_blob_sha":"ca1aec269e0e9772f4cd05d354b560dab346a333","role":"CHUNKING_AND_CONTENT_IDENTITY"},
+    {"path":"src/synergynet/persistent_lab_v3.py","git_blob_sha":"e204e066adbdf08306301ea9c4a86ea35ad07995","role":"PERSISTENT_TRANSFER_COMPONENT"},
+    {"path":"src/synergynet/storage_v3.py","git_blob_sha":"067a5cbd963a491bc430f0805a510905a9143138","role":"DURABLE_CONTENT_STORE_AND_CODEC_ABI"},
+    {"path":"src/synergynet/tcp_transport.py","git_blob_sha":"c3097a94bcc7e979584124bfe6bb1d2adf79fb98","role":"IN_PROCESS_TCP_TRANSPORT"}
+  ],
+  "artifact_kind": "PYTHON_LIBRARY_WITH_IN_PROCESS_SERVER",
+  "service_entrypoint": null,
+  "python_versions": ["3.11", "3.12"],
+  "dependency_lock_status": "STDLIB_ONLY",
+  "service_readiness": "IN_PROCESS_SERVER_NOT_DAEMON_ENTRYPOINT",
+  "build_artifact_digest": null,
+  "execution_authority": "NONE",
+  "readiness_digest": "a41c5bf58ff85ee1b4efafc3975ca975f2ca1c59a020aca056e7351e71659a0e"
+}
