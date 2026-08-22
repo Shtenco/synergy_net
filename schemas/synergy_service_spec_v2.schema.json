@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.service-spec/v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "service_id", "kind", "repository", "source_commit", "runtime_source_manifest_digest",
+    "required_capabilities", "runtime_form", "entrypoint", "health_probe", "lifecycle_protocol",
+    "wire_protocol", "resource_limits", "interface_status", "build_artifact_digest",
+    "build_evidence_digest", "execution_authority", "spec_digest"
+  ],
+  "properties": {
+    "schema": {"const": "synergy.service-spec/v2"},
+    "service_id": {"enum": ["content-cache", "synergynet"]},
+    "kind": {"enum": ["CONTENT_CACHE", "SYNERGYNET"]},
+    "repository": {"const": "Shtenco/synergynet"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "runtime_source_manifest_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "required_capabilities": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "runtime_form": {"const": "PYTHON_SERVICE"},
+    "entrypoint": {"type": "string", "pattern": "^python -m synergynet\\."},
+    "health_probe": {"const": "STATUS_EXPECT_READY"},
+    "lifecycle_protocol": {"const": "SIGINT_SIGTERM_GRACEFUL_SHUTDOWN"},
+    "wire_protocol": {"type": "string", "pattern": "^synergynet\\."},
+    "resource_limits": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}},
+    "interface_status": {"const": "SERVICE_INTERFACE_IMPLEMENTED_SOURCE_ONLY"},
+    "build_artifact_digest": {"type": "null"},
+    "build_evidence_digest": {"type": "null"},
+    "execution_authority": {"const": "NONE"},
+    "spec_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
