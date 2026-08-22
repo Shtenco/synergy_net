@@ -1,0 +1,32 @@
+name: SynergyNet Service Spec v2
+
+on:
+  pull_request:
+    paths:
+      - 'config/service_specs_v2/**'
+      - 'config/runtime_services_v2.json'
+      - 'src/synergynet/service_spec_v2.py'
+      - 'schemas/synergy_service_spec_v2.schema.json'
+      - 'tests/test_service_spec_v2.py'
+      - 'docs/SERVICE_SPEC_V2.md'
+      - '.github/workflows/service-spec-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip pytest jsonschema
+      - run: python -m pip install -e .
+      - run: pytest -q tests/test_runtime_services_v2.py tests/test_runtime_source_manifest_v2.py tests/test_service_spec_v2.py
