@@ -1,0 +1,16 @@
+{
+  "schema": "synergy.service-spec/v1",
+  "service_id": "synergynet",
+  "kind": "SYNERGYNET",
+  "repository": "Shtenco/synergynet",
+  "source_commit": "a8fde01c19420dbe63ca30e1da3b009c0c10064d",
+  "required_capabilities": ["P2P_RELAY"],
+  "runtime_form": "PYTHON_LIBRARY_ONLY",
+  "entrypoint": null,
+  "health_probe": null,
+  "lifecycle_protocol": null,
+  "wire_protocol": null,
+  "readiness_status": "SERVICE_INTERFACE_NOT_IMPLEMENTED",
+  "execution_authority": "NONE",
+  "spec_digest": "e74ae38f45d313b301b4f7b4c408485780d1c1f6ebdb68cbd7c0bd3ed13b391c"
+}
