@@ -1,0 +1,16 @@
+{
+  "schema": "synergy.service-spec/v1",
+  "service_id": "content-cache",
+  "kind": "CONTENT_CACHE",
+  "repository": "Shtenco/synergynet",
+  "source_commit": "a8fde01c19420dbe63ca30e1da3b009c0c10064d",
+  "required_capabilities": ["CONTENT_CACHE"],
+  "runtime_form": "PYTHON_LIBRARY_ONLY",
+  "entrypoint": null,
+  "health_probe": null,
+  "lifecycle_protocol": null,
+  "wire_protocol": null,
+  "readiness_status": "SERVICE_INTERFACE_NOT_IMPLEMENTED",
+  "execution_authority": "NONE",
+  "spec_digest": "9ce8c608edd65f7c888809c49109fa3a4cecffe58d9434d6c9bf317150e7ee96"
+}
