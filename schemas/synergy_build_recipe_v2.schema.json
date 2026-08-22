@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.build-recipe/v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "recipe_id", "repository", "source_commit", "source_role", "service_spec_digests",
+    "artifact_kind", "package_name", "package_version", "python_requires", "build_backend",
+    "build_system_requirements", "runtime_requirements", "build_toolchain", "reproducibility_status",
+    "artifact_digest", "build_evidence_digest", "execution_authority", "recipe_digest"
+  ],
+  "properties": {
+    "schema": {"const": "synergy.build-recipe/v2"},
+    "recipe_id": {"const": "SYNERGYNET_RUNTIME_SERVICES_SOURCE_CANDIDATE_20260822"},
+    "repository": {"const": "Shtenco/synergynet"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "source_role": {"const": "SYNERGYNET_RUNTIME_SERVICES_V2"},
+    "service_spec_digests": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content-cache", "synergynet"],
+      "properties": {
+        "content-cache": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "synergynet": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "artifact_kind": {"const": "PYTHON_WHEEL"},
+    "package_name": {"const": "synergynet"},
+    "package_version": {"const": "0.1.0"},
+    "python_requires": {"const": ">=3.11"},
+    "build_backend": {"const": "setuptools.build_meta"},
+    "build_system_requirements": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "runtime_requirements": {"type": "array", "maxItems": 0},
+    "build_toolchain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "lock_digest"],
+      "properties": {
+        "status": {"const": "NOT_FROZEN"},
+        "lock_digest": {"type": "null"}
+      }
+    },
+    "reproducibility_status": {"const": "NOT_REPRODUCIBLE_TOOLCHAIN_NOT_FROZEN"},
+    "artifact_digest": {"type": "null"},
+    "build_evidence_digest": {"type": "null"},
+    "execution_authority": {"const": "NONE"},
+    "recipe_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
