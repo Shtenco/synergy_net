@@ -1,0 +1,20 @@
+{
+  "schema": "synergy.service-spec/v2",
+  "service_id": "content-cache",
+  "kind": "CONTENT_CACHE",
+  "repository": "Shtenco/synergynet",
+  "source_commit": "aa93e18bdeb84a8475419cde83f149c8381428cd",
+  "runtime_source_manifest_digest": "d8be0a9023111df54c49704e9a0fea07d0fc5cac5a1a333d1c7bfac7a3708930",
+  "required_capabilities": ["CONTENT_CACHE"],
+  "runtime_form": "PYTHON_SERVICE",
+  "entrypoint": "python -m synergynet.content_service_v2",
+  "health_probe": "STATUS_EXPECT_READY",
+  "lifecycle_protocol": "SIGINT_SIGTERM_GRACEFUL_SHUTDOWN",
+  "wire_protocol": "synergynet.content-wire/v2",
+  "resource_limits": ["MAX_PAYLOAD_BYTES", "MAX_CONNECTIONS"],
+  "interface_status": "SERVICE_INTERFACE_IMPLEMENTED_SOURCE_ONLY",
+  "build_artifact_digest": null,
+  "build_evidence_digest": null,
+  "execution_authority": "NONE",
+  "spec_digest": "5ace3018df97985f12d4c28da619b0598223eab34a710cac37d32edaf42ab1fd"
+}
