@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.build-recipe/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema","recipe_id","repository","source_commit","source_role","artifact_kind","package_name","package_version","python_requires","build_backend","build_system_requirements","runtime_requirements","build_toolchain","reproducibility_status","artifact_digest","execution_authority","recipe_digest"],
+  "properties": {
+    "schema": {"const": "synergy.build-recipe/v1"},
+    "recipe_id": {"type": "string", "minLength": 1},
+    "repository": {"type": "string", "pattern": "^Shtenco/"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "source_role": {"type": "string", "minLength": 1},
+    "artifact_kind": {"const": "PYTHON_WHEEL"},
+    "package_name": {"type": "string", "minLength": 1},
+    "package_version": {"type": "string", "minLength": 1},
+    "python_requires": {"type": "string", "minLength": 1},
+    "build_backend": {"type": "string", "minLength": 1},
+    "build_system_requirements": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "runtime_requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["requirement","locked"],
+        "properties": {
+          "requirement": {"type": "string", "minLength": 1},
+          "locked": {"type": "boolean"}
+        }
+      }
+    },
+    "build_toolchain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status","lock_digest"],
+      "properties": {
+        "status": {"type": "string", "minLength": 1},
+        "lock_digest": {"type": ["string","null"], "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "reproducibility_status": {"type": "string", "minLength": 1},
+    "artifact_digest": {"type": ["string","null"], "pattern": "^[0-9a-f]{64}$"},
+    "execution_authority": {"const": "NONE"},
+    "recipe_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

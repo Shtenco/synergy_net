@@ -1,0 +1,29 @@
+name: SynergyNet Build Recipe v1
+
+on:
+  pull_request:
+    paths:
+      - 'config/build_recipe_v1.json'
+      - 'src/synergynet/build_recipe_v1.py'
+      - 'schemas/synergy_build_recipe_v1.schema.json'
+      - 'tests/test_build_recipe_v1.py'
+      - 'docs/BUILD_RECIPE_V1.md'
+      - '.github/workflows/build-recipe-v1.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip pytest jsonschema
+      - run: python -m pip install -e .
+      - run: pytest -q tests/test_build_recipe_v1.py
