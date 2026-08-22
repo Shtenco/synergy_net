@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.service-spec/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema","service_id","kind","repository","source_commit","required_capabilities","runtime_form","entrypoint","health_probe","lifecycle_protocol","wire_protocol","readiness_status","execution_authority","spec_digest"],
+  "properties": {
+    "schema": {"const": "synergy.service-spec/v1"},
+    "service_id": {"type": "string", "minLength": 1},
+    "kind": {"type": "string", "minLength": 1},
+    "repository": {"type": "string", "pattern": "^Shtenco/"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "required_capabilities": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "runtime_form": {"type": "string", "minLength": 1},
+    "entrypoint": {"type": ["string","null"]},
+    "health_probe": {"type": ["string","null"]},
+    "lifecycle_protocol": {"type": ["string","null"]},
+    "wire_protocol": {"type": ["string","null"]},
+    "readiness_status": {"type": "string", "minLength": 1},
+    "execution_authority": {"const": "NONE"},
+    "spec_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
