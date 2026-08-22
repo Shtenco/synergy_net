@@ -1,0 +1,20 @@
+{
+  "schema": "synergy.service-spec/v2",
+  "service_id": "synergynet",
+  "kind": "SYNERGYNET",
+  "repository": "Shtenco/synergynet",
+  "source_commit": "aa93e18bdeb84a8475419cde83f149c8381428cd",
+  "runtime_source_manifest_digest": "d8be0a9023111df54c49704e9a0fea07d0fc5cac5a1a333d1c7bfac7a3708930",
+  "required_capabilities": ["P2P_RELAY"],
+  "runtime_form": "PYTHON_SERVICE",
+  "entrypoint": "python -m synergynet.relay_service_v2",
+  "health_probe": "STATUS_EXPECT_READY",
+  "lifecycle_protocol": "SIGINT_SIGTERM_GRACEFUL_SHUTDOWN",
+  "wire_protocol": "synergynet.relay-wire/v2",
+  "resource_limits": ["STATIC_PEER_DIRECTORY_MAX_256", "MAX_CONNECTIONS", "OUTBOUND_TIMEOUT"],
+  "interface_status": "SERVICE_INTERFACE_IMPLEMENTED_SOURCE_ONLY",
+  "build_artifact_digest": null,
+  "build_evidence_digest": null,
+  "execution_authority": "NONE",
+  "spec_digest": "42c8b0df5e55345bd6b6636dfd4fd311035bd2bca91a9613814beeac08984fce"
+}
