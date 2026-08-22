@@ -1,0 +1,24 @@
+{
+  "schema": "synergy.build-recipe/v2",
+  "recipe_id": "SYNERGYNET_RUNTIME_SERVICES_SOURCE_CANDIDATE_20260822",
+  "repository": "Shtenco/synergynet",
+  "source_commit": "d2f5256825f4ee3e878476556a427b3172cf5d31",
+  "source_role": "SYNERGYNET_RUNTIME_SERVICES_V2",
+  "service_spec_digests": {
+    "content-cache": "5ace3018df97985f12d4c28da619b0598223eab34a710cac37d32edaf42ab1fd",
+    "synergynet": "42c8b0df5e55345bd6b6636dfd4fd311035bd2bca91a9613814beeac08984fce"
+  },
+  "artifact_kind": "PYTHON_WHEEL",
+  "package_name": "synergynet",
+  "package_version": "0.1.0",
+  "python_requires": ">=3.11",
+  "build_backend": "setuptools.build_meta",
+  "build_system_requirements": ["setuptools>=68"],
+  "runtime_requirements": [],
+  "build_toolchain": {"status": "NOT_FROZEN", "lock_digest": null},
+  "reproducibility_status": "NOT_REPRODUCIBLE_TOOLCHAIN_NOT_FROZEN",
+  "artifact_digest": null,
+  "build_evidence_digest": null,
+  "execution_authority": "NONE",
+  "recipe_digest": "9760d89fbc1de9553052db07feee7819bedee98aa0688efcabae7415aa143565"
+}
