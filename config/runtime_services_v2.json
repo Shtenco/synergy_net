@@ -1,0 +1,36 @@
+{
+  "schema": "synergynet.runtime-source/v2",
+  "generation": "BOUNDED_RUNTIME_SERVICES_V2_20260822",
+  "source_status": "IMPLEMENTED_NOT_FROZEN",
+  "services": [
+    {
+      "service_id": "content-cache",
+      "kind": "CONTENT_CACHE",
+      "module": "synergynet.content_service_v2",
+      "entrypoint": "python -m synergynet.content_service_v2",
+      "wire_protocol": "synergynet.content-wire/v2",
+      "health_operation": "STATUS",
+      "ready_value": "READY",
+      "lifecycle": "SIGINT_SIGTERM_GRACEFUL_SHUTDOWN",
+      "resource_limits": ["MAX_PAYLOAD_BYTES", "MAX_CONNECTIONS"],
+      "required_capabilities": ["CONTENT_CACHE"],
+      "execution_authority": "NONE"
+    },
+    {
+      "service_id": "synergynet",
+      "kind": "SYNERGYNET",
+      "module": "synergynet.relay_service_v2",
+      "entrypoint": "python -m synergynet.relay_service_v2",
+      "wire_protocol": "synergynet.relay-wire/v2",
+      "health_operation": "STATUS",
+      "ready_value": "READY",
+      "lifecycle": "SIGINT_SIGTERM_GRACEFUL_SHUTDOWN",
+      "resource_limits": ["STATIC_PEER_DIRECTORY_MAX_256", "MAX_CONNECTIONS", "OUTBOUND_TIMEOUT"],
+      "required_capabilities": ["P2P_RELAY"],
+      "execution_authority": "NONE"
+    }
+  ],
+  "build_artifact_digest": null,
+  "build_evidence_digest": null,
+  "execution_authority": "NONE"
+}
