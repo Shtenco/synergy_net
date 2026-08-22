@@ -193,7 +193,7 @@ def run_content(argv):
 def run_relay(argv):
  p=argparse.ArgumentParser();p.add_argument('--peer-directory',required=True);p.add_argument('--host',default='127.0.0.1');p.add_argument('--port',type=int,default=7792);a=p.parse_args(argv);stop=threading.Event()
  def h(*_):stop.set()
- signal.signal(signal.SIGINT,h);signal(signal.SIGTERM,h)
+ signal.signal(signal.SIGINT,h);signal.signal(signal.SIGTERM,h)
  with RelayServer(Directory.file(a.peer_directory),a.host,a.port): stop.wait()
  return 0
 
