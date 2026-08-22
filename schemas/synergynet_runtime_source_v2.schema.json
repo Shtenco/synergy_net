@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergynet.runtime-source/v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "generation", "source_status", "services", "build_artifact_digest", "build_evidence_digest", "execution_authority"],
+  "properties": {
+    "schema": {"const": "synergynet.runtime-source/v2"},
+    "generation": {"type": "string", "minLength": 1},
+    "source_status": {"const": "IMPLEMENTED_NOT_FROZEN"},
+    "services": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["service_id", "kind", "module", "entrypoint", "wire_protocol", "health_operation", "ready_value", "lifecycle", "resource_limits", "required_capabilities", "execution_authority"],
+        "properties": {
+          "service_id": {"enum": ["content-cache", "synergynet"]},
+          "kind": {"enum": ["CONTENT_CACHE", "SYNERGYNET"]},
+          "module": {"type": "string", "pattern": "^synergynet\\."},
+          "entrypoint": {"type": "string", "pattern": "^python -m synergynet\\."},
+          "wire_protocol": {"type": "string", "pattern": "^synergynet\\."},
+          "health_operation": {"const": "STATUS"},
+          "ready_value": {"const": "READY"},
+          "lifecycle": {"const": "SIGINT_SIGTERM_GRACEFUL_SHUTDOWN"},
+          "resource_limits": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}},
+          "required_capabilities": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "execution_authority": {"const": "NONE"}
+        }
+      }
+    },
+    "build_artifact_digest": {"type": "null"},
+    "build_evidence_digest": {"type": "null"},
+    "execution_authority": {"const": "NONE"}
+  }
+}
