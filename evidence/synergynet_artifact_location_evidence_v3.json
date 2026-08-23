@@ -1,0 +1,40 @@
+{
+  "artifact_digest": "7f22e68d80a7df879af71ebccdb45f8edb10cae3698bf07faa7076ce76fd0ef7",
+  "artifact_manifest_digest": "fde462820a5d8a1b8c48c565a1ccd5fa3a72a9f36a2deec5305af3ce021d4de6",
+  "artifact_size": 12837,
+  "availability_probe": {
+    "artifact_blob_probe": "PASS",
+    "carrier_manifest_probe": "PASS",
+    "observed_date": "2026-08-24",
+    "status": "RESOLVABLE_CURRENT_GITHUB_CONNECTION"
+  },
+  "build_evidence_digest": "8c4f44f1b0b95221d660bb4a7c0598ada17e86f59bade16e85d93789bf1ddd8c",
+  "build_recipe_digest": "37cb503fb8c6d5e8ef2305ce03d0332abee2d9eed5bb29f90364e20874d128df",
+  "carrier_manifest_digest": "28b7069e0715145d5821ea2106de9f8f2f86c45ddc52c97b386b3c6fc86b6528",
+  "carrier_manifest_git_blob": "0b59c384a0ce86f344cc6cb62c20955d09afff1e",
+  "chunks": [
+    {"encoded_length": 3000, "git_blob": "30a38fac5ee78a7a78dfacf90b87fb5eb268e836", "ordinal": 0, "sha256": "8614695e09d583e8fe0bebc7ede4824a2433831539623496f02cee2f4ec90d8b"},
+    {"encoded_length": 3000, "git_blob": "25166fe11721e4b462400dbadd35824f19e36386", "ordinal": 1, "sha256": "d02e248d1725b0984495f15920b13d41c559c14c6009885c1be26d32d8b2dd32"},
+    {"encoded_length": 3000, "git_blob": "6d76784a42adfabcd18a6c031201bfd25476e5ad", "ordinal": 2, "sha256": "2befcb970f8923f55f412b86bc59f9f64eb1695ad509941380f3e501703330ab"},
+    {"encoded_length": 3000, "git_blob": "6c92a73eeb959f08e606e8f25c77b4a8b028aedb", "ordinal": 3, "sha256": "2793053223e4eb5f612b84e3acbd1efaf4d71c42a50128d1dec67b067915b0a9"},
+    {"encoded_length": 3000, "git_blob": "abf0831fa5557830b9aa6df47018a97322168567", "ordinal": 4, "sha256": "aa2478ebe1207fab5335c802447b72533597ea948dc865409399dc2a17904598"},
+    {"encoded_length": 2116, "git_blob": "ad8afafc36169bc3a78d8f1a5e04938cb688a62c", "ordinal": 5, "sha256": "10054115aece40ade81e9ed65e32f8e53e93f5a0068c3a991fd7a996c7fa5feb"}
+  ],
+  "current_unavailability_negative_evidence_digest": "2529d725e426c5028daab7346d1c704d643ffd209d35ceace7f7330203a6353f",
+  "durable_branch": "feat/location-evidence-v3-git-carrier-20260824",
+  "durable_commit": "5fd3d2b7e2ce934c32fcc5221cddb343c9742a69",
+  "durable_path": "artifacts/durable/synergynet_runtime_v3_git_carrier",
+  "durable_tree": "3c5fcbc3dca75967544add4b99a5f17b5f933bfc",
+  "encoded_length": 17116,
+  "encoding": "BASE64_STANDARD_NO_WHITESPACE",
+  "evidence_id": "SYNERGYNET_RUNTIME_V3_GITHUB_GIT_CARRIER_20260824",
+  "execution_authority": "NONE",
+  "location_evidence_digest": "b1ca1c1f5849deac30a0aac14748c21b8a74a26776ba2134a448c9427a839220",
+  "location_status": "DURABLE_GITHUB_GIT_CARRIER_CURRENTLY_RESOLVABLE",
+  "locator_kind": "IMMUTABLE_GIT_BLOB_SET_REBOUND_UNDER_DURABLE_TREE",
+  "previous_location_evidence_digest": "c4102a8e668b79fc961a5f1767154154f4a600d320442770d74c7a006a5cee08",
+  "provider": "GITHUB_GIT_OBJECT_DATABASE",
+  "repository": "Shtenco/synergynet",
+  "resolution_contract": "FETCH_IMMUTABLE_GIT_BLOBS_BY_SHA_IN_ORDINAL_ORDER__VERIFY_EACH_CHUNK_SHA256_AND_LENGTH__CONCAT_ASCII__STRICT_BASE64_DECODE__VERIFY_ARTIFACT_SHA256_AND_SIZE",
+  "schema": "synergy.artifact-location-evidence/v3"
+}
