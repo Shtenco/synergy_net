@@ -1,0 +1,22 @@
+{
+  "schema": "synergy.artifact-location-availability-negative-evidence/v1",
+  "evidence_id": "SYNERGYNET_DRIVE_LOCATOR_CURRENTLY_UNRESOLVABLE_20260823",
+  "repository": "Shtenco/synergynet",
+  "artifact_digest": "7f22e68d80a7df879af71ebccdb45f8edb10cae3698bf07faa7076ce76fd0ef7",
+  "artifact_size": 12837,
+  "previous_location_evidence_digest": "c4102a8e668b79fc961a5f1767154154f4a600d320442770d74c7a006a5cee08",
+  "previous_provider": "GOOGLE_DRIVE",
+  "previous_provider_file_id": "1zuB8rjKO0HHIZmvUEGZnAbnkKGNN59qp",
+  "observed_date_utc": "2026-08-23",
+  "probe_result": "NOT_FOUND_CURRENT_CONNECTED_DRIVE",
+  "current_locator_status": "UNRESOLVABLE_CURRENT_CONNECTION",
+  "artifact_identity_status": "UNCHANGED",
+  "reproducibility_status": "EXACT_REPRODUCIBLE_BUILD_EVIDENCE_PRESERVED",
+  "build_recipe_v3_digest": "37cb503fb8c6d5e8ef2305ce03d0332abee2d9eed5bb29f90364e20874d128df",
+  "build_evidence_v1_digest": "8c4f44f1b0b95221d660bb4a7c0598ada17e86f59bade16e85d93789bf1ddd8c",
+  "transport_binding_digest": "3c8198e10863c52c0492ca422c404a1e05e6fd2f48f4c393587d9d87eee3855f",
+  "effect": "DO_NOT_ASSUME_CURRENT_DRIVE_RESOLVABILITY",
+  "production_effect": "NEW_DURABLE_LOCATOR_AND_FRESH_SHA_SIZE_VERIFICATION_REQUIRED",
+  "execution_authority": "NONE",
+  "negative_evidence_digest": "2529d725e426c5028daab7346d1c704d643ffd209d35ceace7f7330203a6353f"
+}
