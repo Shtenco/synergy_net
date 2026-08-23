@@ -1,0 +1,21 @@
+name: SynergyNet LocationEvidence v3 Git Carrier
+on:
+  pull_request:
+    paths:
+      - 'artifacts/durable/synergynet_runtime_v3_git_carrier/**'
+      - 'evidence/synergynet_artifact_location_evidence_v3.json'
+      - 'scripts/verify_location_evidence_v3.py'
+      - 'tests/test_location_evidence_v3.py'
+      - 'docs/SYNERGYNET_LOCATION_EVIDENCE_V3_GIT_CARRIER_20260824.md'
+      - '.github/workflows/location-evidence-v3.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/verify_location_evidence_v3.py
+      - run: python -m unittest tests/test_location_evidence_v3.py -v
