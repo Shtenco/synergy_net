@@ -1,0 +1,20 @@
+name: AUTOPILOT V5 AI Node Transport v2
+on:
+  pull_request:
+    paths:
+      - 'bindings/synergy_autopilot_v5_ai_node_transport_v2.json'
+      - 'src/synergynet/autopilot_node_transport_v2.py'
+      - 'tests/test_autopilot_node_transport_v2.py'
+      - 'docs/AUTOPILOT_V5_AI_NODE_TRANSPORT_V2.md'
+      - '.github/workflows/autopilot-v5-ai-node-transport-v2.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -e .
+      - run: python -m unittest tests/test_autopilot_node_transport_v2.py -v
