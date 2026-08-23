@@ -1,0 +1,20 @@
+name: SynergyNet Locator Availability Negative Evidence v1
+on:
+  pull_request:
+    paths:
+      - 'evidence/synergynet_artifact_location_availability_negative_evidence_v1.json'
+      - 'scripts/verify_location_availability_negative_evidence_v1.py'
+      - 'tests/test_location_availability_negative_evidence_v1.py'
+      - 'docs/SYNERGYNET_LOCATION_AVAILABILITY_NEGATIVE_EVIDENCE_V1_20260823.md'
+      - '.github/workflows/location-availability-negative-evidence-v1.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/verify_location_availability_negative_evidence_v1.py
+      - run: python -m unittest tests/test_location_availability_negative_evidence_v1.py -v
