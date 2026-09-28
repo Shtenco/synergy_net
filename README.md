@@ -386,3 +386,31 @@ flowchart LR
 Любое сильное утверждение должно указывать на воспроизводимый тест, benchmark, ledger/evidence artifact или формально проверяемый контракт.
 
 <!-- SYNERGY-FEDERATION-PASSPORT:END -->
+
+---
+
+# 🌐 Глубокий статус-паспорт SynergyNet
+
+## Реальность `main`
+
+Несмотря на большой target architecture в README, текущий `main` содержит только legacy verification network implementation и тест плюс distillation docs.
+
+```text
+research/legacy_distillation_v1/verification_network_v2.py
+tests/test_verification_network_v2.py
+```
+
+Следовательно, текущий статус — **network architecture + legacy verification bootstrap**, а не реализованный PQ mesh/content network.
+
+```mermaid
+flowchart LR
+    LEG[Legacy verification network] --> TEST[Test]
+    TEST --> TARGET[Target SynergyNet architecture]
+    TARGET --> FUT[Future PQ mesh runtime]
+```
+
+## Promotion gate
+
+real peer discovery + authenticated session + content framing/chunking + cache/dedup + multipath transport + benchmark against QUIC/P2P baseline.
+
+До этого performance/security claims должны оставаться target hypotheses.
